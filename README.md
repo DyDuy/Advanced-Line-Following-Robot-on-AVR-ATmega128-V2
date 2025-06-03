@@ -1,8 +1,9 @@
 # Advanced-Line-Following-Robot-on-AVR-ATmega128-V2
-Overview
+#Overview
+
 This project develops an autonomous line-following robot using the ATmega128 microcontroller with three infrared line sensors. The robot follows a track using a simple on/off motor control strategy instead of PWM-based speed adjustment.
 
-Key Features
+#Key Features
 Three Infrared Line Sensors: Detects the line for directional control.
 
 Direct Motor Activation: Motors turn ON/OFF for movement instead of PWM control.
@@ -11,7 +12,7 @@ Basic Directional Logic: Adjusts movement based on sensor input.
 
 AVR-Based Firmware: Programmed in C/C++ using AVR-GCC.
 
-Hardware & Components
+#Hardware & Components
 ATmega128 Microcontroller
 
 Three Infrared Line Sensors
@@ -20,7 +21,7 @@ DC Motors & Motor Driver (L298N or similar)
 
 Power Source (Li-Po or Li-Ion Battery)
 
-Implementation
+#Implementation
 Sensor Reading: Process signals from three infrared sensors.
 
 Motor Control (ON/OFF): Robot moves based on predefined conditions.
@@ -36,14 +37,14 @@ Right Sensor Active (0b011, 0b001) → Right motor OFF, left motor ON (turn righ
 
 No Line Detected (0b000) → Follow the last direction or reverse briefly.
 
-Results & Performance
+#Results & Performance
 Robot tracks straight and curved paths using simple logic.
 
 Quick direction adjustments enable efficient movement.
 
 No need for PWM control, making implementation simpler and hardware-friendly.
 
-Future Improvements
+#Future Improvements
 Implement PID control for smoother tracking.
 
 Add more sensors for better path recognition.

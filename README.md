@@ -1,55 +1,80 @@
-# Advanced-Line-Following-Robot-on-AVR-ATmega128-V2
-#Overview
+# Advanced Line Following Robot on AVR ATmega128 (V2)
 
-This project develops an autonomous line-following robot using the ATmega128 microcontroller with three infrared line sensors. The robot follows a track using a simple on/off motor control strategy instead of PWM-based speed adjustment.
+## 📌 Overview
 
-#Key Features
-Three Infrared Line Sensors: Detects the line for directional control.
+This project develops an **autonomous line-following robot** using the **ATmega128 microcontroller** with **three infrared line sensors**.  
+The robot follows a track using a **simple ON/OFF motor control strategy** instead of PWM-based speed adjustment.
 
-Direct Motor Activation: Motors turn ON/OFF for movement instead of PWM control.
+---
 
-Basic Directional Logic: Adjusts movement based on sensor input.
+## 🔧 Key Features
 
-AVR-Based Firmware: Programmed in C/C++ using AVR-GCC.
+- **Three Infrared Line Sensors**  
+  Detects the black line for directional control.
 
-#Hardware & Components
-ATmega128 Microcontroller
+- **Direct Motor Activation (ON/OFF)**  
+  Motors are directly turned ON or OFF for movement — no PWM.
 
-Three Infrared Line Sensors
+- **Basic Directional Logic**  
+  Adjusts movement using predefined logic based on sensor readings.
 
-DC Motors & Motor Driver (L298N or similar)
+- **AVR-Based Firmware**  
+  Programmed in **C/C++** using **AVR-GCC** for maximum efficiency.
 
-Power Source (Li-Po or Li-Ion Battery)
+---
 
-#Implementation
-Sensor Reading: Process signals from three infrared sensors.
+## 🔩 Hardware & Components
 
-Motor Control (ON/OFF): Robot moves based on predefined conditions.
+- ✅ ATmega128 Microcontroller  
+- ✅ 3 x Infrared Line Sensors (Left - Middle - Right)  
+- ✅ 2 x DC Motors + Motor Driver (L298N or equivalent)  
+- ✅ Power Supply (Li-Po or Li-Ion battery recommended)
 
-Directional Correction: Adjusts movement when the line is lost.
+---
 
-#Algorithm
+## 🧠 Implementation Steps
 
-Middle Sensor Active (0b010) → Motors ON, move forward.
+1. **Sensor Reading**  
+   Read digital values (1 or 0) from 3 IR sensors to determine position.
 
-Left Sensor Active (0b110, 0b100, 0b111) → Left motor OFF, right motor ON (turn left).
+2. **Motor Control (ON/OFF logic)**  
+   Motors are activated or deactivated depending on sensor readings.
 
-Right Sensor Active (0b011, 0b001) → Right motor OFF, left motor ON (turn right).
+3. **Directional Correction**  
+   If the line is lost, the robot adjusts direction or stops briefly.
 
-No Line Detected (0b000) → Follow the last direction or reverse briefly.
+---
 
-#Results & Performance
+## 🔁 Control Algorithm
 
-Robot tracks straight and curved paths using simple logic.
+| Sensor Reading (Binary) | Meaning                        | Action                      |
+|-------------------------|--------------------------------|-----------------------------|
+| `0b010`                 | Middle sensor on line          | Go straight (both motors ON) |
+| `0b110`, `0b100`, `0b111` | Line on left side              | Turn left (right motor ON only) |
+| `0b011`, `0b001`        | Line on right side             | Turn right (left motor ON only) |
+| `0b000`                 | No line detected               | Stop or reverse briefly     |
 
-Quick direction adjustments enable efficient movement.
+---
 
-No need for PWM control, making implementation simpler and hardware-friendly.
+## ✅ Results & Performance
 
-#Future Improvements
+- Robot successfully tracks **both straight and curved paths**.
+- **Quick direction changes** using simple logic.
+- Minimal hardware complexity thanks to **non-PWM motor control**.
 
-Implement PID control for smoother tracking.
+---
 
-Add more sensors for better path recognition.
+## 🚀 Future Improvements
 
-Upgrade wireless communication for remote monitoring.
+- 🔄 Implement **PID control** for smoother line tracking.
+- ➕ Add **more IR sensors** for precise path detection.
+- 📡 Upgrade with **wireless communication** (Bluetooth/Wi-Fi) for real-time control or telemetry.
+
+---
+
+## 👨‍💻 Developed With
+
+- **Language:** C (AVR-GCC)
+- **Platform:** Atmel Studio / AVR toolchain
+- **Microcontroller:** ATmega128
+

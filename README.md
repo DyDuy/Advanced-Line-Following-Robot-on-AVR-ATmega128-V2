@@ -28,7 +28,8 @@ Motor Control (ON/OFF): Robot moves based on predefined conditions.
 
 Directional Correction: Adjusts movement when the line is lost.
 
-Algorithm
+#Algorithm
+
 Middle Sensor Active (0b010) → Motors ON, move forward.
 
 Left Sensor Active (0b110, 0b100, 0b111) → Left motor OFF, right motor ON (turn left).
@@ -38,6 +39,7 @@ Right Sensor Active (0b011, 0b001) → Right motor OFF, left motor ON (turn righ
 No Line Detected (0b000) → Follow the last direction or reverse briefly.
 
 #Results & Performance
+
 Robot tracks straight and curved paths using simple logic.
 
 Quick direction adjustments enable efficient movement.
@@ -45,6 +47,7 @@ Quick direction adjustments enable efficient movement.
 No need for PWM control, making implementation simpler and hardware-friendly.
 
 #Future Improvements
+
 Implement PID control for smoother tracking.
 
 Add more sensors for better path recognition.

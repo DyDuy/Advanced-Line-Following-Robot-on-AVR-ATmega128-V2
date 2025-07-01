@@ -77,4 +77,7 @@ The robot follows a track using a **simple ON/OFF motor control strategy** inste
 - **Language:** C (AVR-GCC)
 - **Platform:** Atmel Studio / AVR toolchain
 - **Microcontroller:** ATmega128
+## 📦 Demo
+👉 Link video demo:  
+[📂 Google Drive - ATM AVR Demo](https://drive.google.com/drive/folders/1BnHZs65byMRFNs7RlJewGbiHev4_5pqB)
 
